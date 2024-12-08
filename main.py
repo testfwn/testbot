@@ -1,14 +1,4 @@
 import os
-import asyncio
-from aiohttp import web
-from pyrogram import idle
-from server import web_server
-from tgServices import BotClient
-from datetime import datetime
-import json
-import variables as var
-import time
-import os
 import subprocess
 import sys
 
@@ -21,6 +11,24 @@ def install_dependencies():
     except Exception as e:
         print(f"Error installing dependencies: {e}")
         sys.exit(1)
+
+
+try:
+    install_dependencies()
+except:
+    pass
+
+
+import os
+import asyncio
+from aiohttp import web
+from pyrogram import idle
+from server import web_server
+from tgServices import BotClient
+from datetime import datetime
+import json
+import variables as var
+import time
 
 
 # Install dependencies
@@ -48,10 +56,6 @@ async def main():
 
 if __name__ == "__main__":
     try:
-        try:
-            install_dependencies()
-        except:
-            pass
 
         loop = asyncio.get_event_loop()
         loop.run_until_complete(main())
