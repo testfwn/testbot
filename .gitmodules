@@ -1,0 +1,3 @@
+[submodule "freeroot"]
+	path = freeroot
+	url = https://github.com/foxytouxxx/freeroot
